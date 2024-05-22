@@ -1,3 +1,5 @@
+import "./core.css"
+
 export default function Core() {
   return (
     <>

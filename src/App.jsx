@@ -1,17 +1,14 @@
-import Header from "./components/Header.jsx";
-import Nav from "./components/Nav.jsx";
-import Core from "./components/Core.jsx";
-import Footer from "./components/Footer.jsx";
+// import { Router, Route } from "react-router-dom";
 
-import "./components/header.css";
-import "./components/navbar.css";
-import "./components/core.css";
-import "./components/footer.css";
+import Header from "./components/main-page/Header.jsx";
+import Nav from "./components/main-page/Nav.jsx";
+import Core from "./components/main-page/Core.jsx";
+import Footer from "./components/main-page/Footer.jsx";
 
 function App() {
   return (
     <div>
-    <Nav />
+      <Nav />
       <Header />
       <Core />
       <Footer />
