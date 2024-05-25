@@ -5,6 +5,7 @@ import Nav from "./components/main-page/Nav.jsx";
 import Core from "./components/main-page/Core.jsx";
 import Footer from "./components/main-page/Footer.jsx";
 
+
 function App() {
   return (
     <div>
@@ -13,6 +14,7 @@ function App() {
       <Core />
       <Footer />
     </div>
+   
   );
 }
 
