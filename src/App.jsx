@@ -20,7 +20,7 @@ function Layout() {
   const isHomePage = location.pathname === "/";
 
   return (
-    <div>
+    <>
       {isHomePage && <Nav />}
       {isHomePage && <Header />}
       <Routes>
@@ -30,7 +30,7 @@ function Layout() {
         <Route path="/Arabia" element={<Arabia />} />
       </Routes>
       {isHomePage && <Footer />}
-    </div>
+    </>
   );
 }
 

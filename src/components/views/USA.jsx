@@ -3,7 +3,7 @@ import './main.css';
 
 const USA = function () {
   return (
-    <div>
+    <>
       <div class="header-content3">
         <h2>Touch the American dream</h2>
       </div>
@@ -45,7 +45,7 @@ const USA = function () {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

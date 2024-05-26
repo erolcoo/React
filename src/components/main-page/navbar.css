@@ -1,23 +1,37 @@
+nav {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
+
 nav ul {
-    font-size: 30px;
-    font-style: italic;
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-    background-color: black;
-  }
-  
-  nav li {
-    margin: 10px;
-    border: 2px solid white;
-    border-radius: 35px;
-    padding: 10px;
-  }
-  
-  nav li:hover {
-    background-color: gray;
-  }
-  nav a {
-    text-decoration: none;
-    color: white;
-  }
+  font-size: 30px;
+  font-style: italic;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  padding: 0;
+  margin: 0;  
+}
+
+
+nav li {
+  margin: 10px;
+  border: 2px solid white;
+  border-radius: 35px;
+  padding: 10px;
+  flex-shrink: 0;
+}
+
+
+nav li:hover {
+  background-color: gray;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}

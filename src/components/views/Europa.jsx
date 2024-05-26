@@ -1,9 +1,10 @@
 import React from "react";
 import "./main.css";
+import "../../../styleindex.css";
 
 const Europa = function () {
   return (
-    <div>
+    <>
       <div className="header-content2">
         <h2>European culture</h2>
       </div>
@@ -88,7 +89,7 @@ const Europa = function () {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

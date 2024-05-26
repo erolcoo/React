@@ -3,7 +3,7 @@ import './main.css';
 
 const Arabia = function () {
   return (
-    <div>
+    <>
       <div class="header-content1">
         <h2>Desert paradise</h2>
       </div>
@@ -45,7 +45,7 @@ const Arabia = function () {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
