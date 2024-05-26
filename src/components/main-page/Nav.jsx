@@ -17,7 +17,7 @@ export default function NavBar() {
             <Link to="/">logout</Link>
           </li>
           <li>
-            <Link to="/Usa">USA</Link>
+            <Link to="/USA">USA</Link>
           </li>
           <li>
             <Link to="/Europa">Europe</Link>
