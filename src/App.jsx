@@ -12,8 +12,9 @@ import Footer from "./components/main-page/Footer.jsx";
 import Europa from "./components/views/Europa.jsx";
 import USA from "./components/views/USA.jsx";
 import Arabia from "./components/views/Arabia.jsx";
+import LoginForm from "../src/components/auth-pages/login.tsx";
 // import Register from './components/Register.jsx';
-// import Login from './components/Login.jsx';
+
 
 function Layout() {
   const location = useLocation();
@@ -25,7 +26,8 @@ function Layout() {
       {isHomePage && <Header />}
       <Routes>
         <Route path="/" element={<Core />} />
-        <Route path="/europa" element={<Europa />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/Europa" element={<Europa />} />
         <Route path="/USA" element={<USA />} />
         <Route path="/Arabia" element={<Arabia />} />
       </Routes>

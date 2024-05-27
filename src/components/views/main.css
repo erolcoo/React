@@ -37,14 +37,21 @@ img {
 div {
   padding: 20px;
 }
-a{
+.Link-Home a {
   font-size: 30px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-style: italic;
-border-radius: 20px;
-text-decoration: none;
-align-items: center;
-padding: 10px;
+  border: 2px solid black;
+  border-radius: 20px;
+  color: black;
+  background-color: #a4995a;
+  text-decoration: none;
+  padding: 10px;
+  margin-left: 50%;
+}
+.Link-Home a:hover {
+  color: white;
+  background-color: black;
 }
 article {
   height: auto;

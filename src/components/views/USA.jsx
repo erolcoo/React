@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import './main.css';
 
 const USA = function () {
@@ -6,6 +7,9 @@ const USA = function () {
     <>
       <div class="header-content3">
         <h2>Touch the American dream</h2>
+      </div>
+      <div className="Link-Home">
+        <Link to="/">Home</Link>
       </div>
       <div class="travel-box">
         <div>

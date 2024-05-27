@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 import "./main.css";
 import "../../../styleindex.css";
@@ -10,7 +10,9 @@ const Europa = function () {
       <div className="header-content2">
         <h2> European culture</h2>
       </div>
-        <div><Link to="/">Home</Link></div>
+      <div className="Link-Home">
+        <Link to="/">Home</Link>
+      </div>
       <div className="travel-box">
         <div>
           <img
