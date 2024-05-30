@@ -13,7 +13,7 @@ import Europa from "./components/views/Europa.jsx";
 import USA from "./components/views/USA.jsx";
 import Arabia from "./components/views/Arabia.jsx";
 import LoginForm from "../src/components/auth-pages/login.tsx";
-// import Register from './components/Register.jsx';
+import RegisterForm from '../src/components/auth-pages/register.tsx';
 
 
 function Layout() {
@@ -26,6 +26,7 @@ function Layout() {
       {isHomePage && <Header />}
       <Routes>
         <Route path="/" element={<Core />} />
+        <Route path="/register" element={<RegisterForm />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/Europa" element={<Europa />} />
         <Route path="/USA" element={<USA />} />

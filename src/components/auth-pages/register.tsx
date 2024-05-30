@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { useNavigate, Link } from 'react-router-dom';
 import './auth.css';
 
-const LoginForm = () => {
+const RegisterForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [errors, setErrors] = useState({});
+  
+  const navigate = useNavigate();
 
   const validateEmail = (email) => {
     return email.includes('@');
@@ -15,32 +18,42 @@ const LoginForm = () => {
     return password.length >= 6;
   };
 
+  const validateConfirmPassword = (password, confirmPassword) => {
+    return password === confirmPassword;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const emailValid = validateEmail(email);
     const passwordValid = validatePassword(password);
+    const confirmPasswordValid = validateConfirmPassword(password, confirmPassword);
 
-    if (!emailValid || !passwordValid) {
+    if (!emailValid || !passwordValid || !confirmPasswordValid) {
       setErrors({
         email: !emailValid ? 'Invalid email address.' : '',
         password: !passwordValid ? 'Password must be at least 6 characters long.' : '',
+        confirmPassword: !confirmPasswordValid ? 'Passwords do not match.' : '',
       });
       return;
     }
 
-    // Perform login logic here (e.g., send data to the server)
+    // Registration logic (e.g., send data to the server) goes here
     console.log('Email:', email);
     console.log('Password:', password);
 
-    // Clear form fields after submission
+    // Clear form fields and errors after successful registration
     setEmail('');
     setPassword('');
+    setConfirmPassword('');
     setErrors({});
+
+    // Redirect to home page after successful registration
+    navigate('/');
   };
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <h2>Login</h2>
+      <h2>Register</h2>
       <div className="form-group">
         <label htmlFor="email">Email:</label>
         <input
@@ -63,13 +76,24 @@ const LoginForm = () => {
         />
         {errors.password && <p className="error">{errors.password}</p>}
       </div>
+      <div className="form-group">
+        <label htmlFor="confirmPassword">Confirm Password:</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          required
+        />
+        {errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
+      </div>
       <button type="submit">Submit</button>
       <div className="link-container">
         <Link to="/">Back</Link>
-        <Link to="/register">Register</Link>
+        <Link to="/login">Login</Link>
       </div>
     </form>
   );
 };
 
-export default LoginForm;
+export default RegisterForm;
