@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import './auth.css';
 
+
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -39,6 +40,7 @@ const LoginForm = () => {
   };
 
   return (
+
     <form className="form" onSubmit={handleSubmit}>
       <h2>Login</h2>
       <div className="form-group">
@@ -69,6 +71,7 @@ const LoginForm = () => {
         <Link to="/register">Register</Link>
       </div>
     </form>
+    
   );
 };
 
