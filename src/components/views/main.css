@@ -10,20 +10,20 @@ body {
 }
 
 .header-content1 {
-  height: 400px;
+  height: 500px;
   background-image: url("https://images.unsplash.com/photo-1489493585363-d69421e0edd3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-repeat: no-repeat;
   background-position: center;
 }
 .header-content2 {
-  height: 400px;
+  height: 500px;
   background-image: url("https://images.unsplash.com/photo-1485081669829-bacb8c7bb1f3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .header-content3 {
-  height: 400px;
+  height: 500px;
   background-image: url("https://images.unsplash.com/photo-1506888744203-b711bd0c4a88?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-repeat: no-repeat;
   background-position: center;
