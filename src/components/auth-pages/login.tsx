@@ -29,7 +29,6 @@ const LoginForm = () => {
       return;
     }
 
-    // Perform login logic here (e.g., send data to the server)
     console.log('Email:', email);
     console.log('Password:', password);
 
