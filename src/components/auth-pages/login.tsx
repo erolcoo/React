@@ -32,7 +32,7 @@ const LoginForm = () => {
     console.log('Email:', email);
     console.log('Password:', password);
 
-    // Clear form fields after submission
+  
     setEmail('');
     setPassword('');
     setErrors({});

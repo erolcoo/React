@@ -37,17 +37,16 @@ const RegisterForm = () => {
       return;
     }
 
-    // Registration logic (e.g., send data to the server) goes here
+   
     console.log('Email:', email);
     console.log('Password:', password);
 
-    // Clear form fields and errors after successful registration
+
     setEmail('');
     setPassword('');
     setConfirmPassword('');
     setErrors({});
 
-    // Redirect to home page after successful registration
     navigate('/');
   };
 
