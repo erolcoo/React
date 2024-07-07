@@ -7,13 +7,14 @@ import {
 } from "react-router-dom";
 import Header from "./components/main-page/Header.jsx";
 import Nav from "./components/main-page/Nav.jsx";
+import Catalog from "./components/main-page/Catalog.jsx";
 import Core from "./components/main-page/Core.jsx";
 import Footer from "./components/main-page/Footer.jsx";
 import Europa from "./components/views/Europa.jsx";
 import USA from "./components/views/USA.jsx";
 import Arabia from "./components/views/Arabia.jsx";
-import LoginForm from "../src/components/auth-pages/login.tsx";
-import RegisterForm from '../src/components/auth-pages/register.tsx';
+import LoginForm from "../src/components/auth-pages/login.jsx";
+import RegisterForm from '../src/components/auth-pages/register.jsx';
 
 
 function Layout() {
@@ -28,6 +29,7 @@ function Layout() {
         <Route path="/" element={<Core />} />
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/login" element={<LoginForm />} />
+        <Route path="/Catalog" element={<Catalog />} />
         <Route path="/Europa" element={<Europa />} />
         <Route path="/USA" element={<USA />} />
         <Route path="/Arabia" element={<Arabia />} />
