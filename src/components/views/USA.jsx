@@ -9,7 +9,7 @@ const USA = function () {
         <h2>Touch the American dream</h2>
       </div>
       <div className="Link-Home">
-        <Link to="/">Home</Link>
+      <Link to="/catalog">Catalog</Link>
       </div>
       <div class="travel-box">
         <div>

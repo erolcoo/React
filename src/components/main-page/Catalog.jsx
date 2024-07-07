@@ -1,4 +1,11 @@
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGlobe,
+  faMosque,
+  faHome,
+  faFlagUsa,
+} from "@fortawesome/free-solid-svg-icons";
 
 import "./Catalog.css";
 
@@ -8,16 +15,26 @@ export default function Catalog() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/USA">
+              <FontAwesomeIcon icon={faFlagUsa} style={{ color: "red" }} /> USA
+            </Link>
           </li>
           <li>
-            <Link to="/USA">Usa</Link>
+            <Link to="/Europa">
+              <FontAwesomeIcon icon={faGlobe} style={{ color: "blue" }} />{" "}
+              Europe
+            </Link>
           </li>
           <li>
-            <Link to="/Europa">Europe</Link>
+            <Link to="/Arabia">
+              <FontAwesomeIcon icon={faMosque} style={{ color: "orange" }} />{" "}
+              Arabia
+            </Link>
           </li>
           <li>
-            <Link to="/Arabia">Arabia</Link>
+            <Link to="/">
+              <FontAwesomeIcon icon={faHome} style={{ color: "green" }} /> Home
+            </Link>
           </li>
         </ul>
       </nav>

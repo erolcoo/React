@@ -11,7 +11,7 @@ const Europa = function () {
         <h2> European culture</h2>
       </div>
       <div className="Link-Home">
-        <Link to="/">Home</Link>
+      <Link to="/catalog">Catalog</Link>
       </div>
       <div className="travel-box">
         <div>

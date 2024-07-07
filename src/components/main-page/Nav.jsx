@@ -1,6 +1,14 @@
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUserPlus,
+  faSignInAlt,
+  faSignOutAlt,
+  faList,
+} from "@fortawesome/free-solid-svg-icons";
 
-import "./navbar.css";
+import "./Navbar.css";
+
 
 export default function NavBar() {
   return (
@@ -8,16 +16,28 @@ export default function NavBar() {
       <nav>
         <ul>
           <li>
-            <Link to="/register">Register</Link>
+            <Link to="/register">
+              <FontAwesomeIcon icon={faUserPlus} style={{ color: "green" }} /> 
+              Register
+            </Link>
           </li>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/login">
+              <FontAwesomeIcon icon={faSignInAlt} style={{ color: "green" }} />
+              Login
+            </Link>
           </li>
           <li>
-            <Link to="/">logout</Link>
+            <Link to="/logout">
+              <FontAwesomeIcon icon={faSignOutAlt} style={{ color: "red" }} />
+              Logout
+            </Link>
           </li>
           <li>
-            <Link to="/Catalog">Catalog</Link>
+            <Link to="/Catalog">
+              <FontAwesomeIcon icon={faList} style={{ color: "yellow" }} />
+              Catalog
+            </Link>
           </li>
         </ul>
       </nav>
