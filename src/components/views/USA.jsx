@@ -19,7 +19,7 @@ const USA = function () {
             <p>
               The Statue of Liberty, a gift from France to the United States, stands proudly in New York Harbor, symbolizing freedom and democracy. This iconic statue, designed by Frédéric Auguste Bartholdi, welcomes visitors and immigrants alike with its torch held high and its inscription of Emma Lazarus's famous words, "Give me your tired, your poor, your huddled masses yearning to breathe free." Its copper patina glows in the sunlight, reminding all who see it of the enduring values upon which the nation was founded.
             </p>
-            <p><br /><a href="">Take Offer</a></p>
+            <a href="/TakeOffer">Take Offer</a>
           </div>
         </div>
         <article>
@@ -32,7 +32,7 @@ const USA = function () {
             <p>
               The White House, located in Washington, D.C., serves as the official residence and workplace of the President of the United States. With its neoclassical design and iconic white exterior, it stands as a symbol of American governance and democracy. Since its completion in 1800, the White House has witnessed pivotal moments in U.S. history and has hosted leaders from around the world. Its iconic architecture and historical significance make it a must-see destination for visitors to the nation's capital.
             </p>
-            <p><br /><a href="">Take Offer</a></p>
+            <a href="/TakeOffer">Take Offer</a>
           </div>
         </div>
         <article>
@@ -45,7 +45,7 @@ const USA = function () {
             <p>
               Mount Rushmore, nestled in the Black Hills of South Dakota, is a monumental tribute to American history and leadership. Carved into the granite face of the mountain are the likenesses of four revered presidents: George Washington, Thomas Jefferson, Theodore Roosevelt, and Abraham Lincoln. Created by sculptor Gutzon Borglum and his team, this breathtaking sculpture attracts millions of visitors each year, offering a glimpse into the ideals and aspirations of the United States.
             </p>
-            <p><br /><a href="">Take Offer</a></p>
+            <a href="/TakeOffer">Take Offer</a>
           </div>
         </div>
       </div>

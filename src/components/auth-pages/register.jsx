@@ -7,20 +7,11 @@ const RegisterForm = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errors, setErrors] = useState({});
-  
   const navigate = useNavigate();
 
-  const validateEmail = (email) => {
-    return email.includes('@');
-  };
-
-  const validatePassword = (password) => {
-    return password.length >= 6;
-  };
-
-  const validateConfirmPassword = (password, confirmPassword) => {
-    return password === confirmPassword;
-  };
+  const validateEmail = (email) => email.includes('@');
+  const validatePassword = (password) => password.length >= 6;
+  const validateConfirmPassword = (password, confirmPassword) => password === confirmPassword;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,10 +28,8 @@ const RegisterForm = () => {
       return;
     }
 
-   
-    console.log('Email:', email);
-    console.log('Password:', password);
-
+    const newUser = { email, password };
+    localStorage.setItem('user', JSON.stringify(newUser));
 
     setEmail('');
     setPassword('');

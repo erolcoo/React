@@ -33,7 +33,7 @@ const Europa = function () {
               over the City of Light.
             </p>
             <p>
-              <a href="">Take Offert</a>
+              <a href="/TakeOffer">Take Offer</a>
             </p>
           </div>
         </div>
@@ -61,7 +61,7 @@ const Europa = function () {
               contemplation and awe from all who visit its sacred space.
             </p>
             <p>
-              <a href="">Take Offert</a>
+            <a href="/TakeOffer">Take Offer</a>
             </p>
           </div>
         </div>
@@ -88,7 +88,7 @@ const Europa = function () {
               immerse themselves in the rich history of the empire.
             </p>
             <p>
-              <a href="">Take Offert</a>
+            <a href="/TakeOffer">Take Offer</a>
             </p>
           </div>
         </div>

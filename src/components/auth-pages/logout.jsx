@@ -1,10 +1,17 @@
+import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
-
+import { useAuth } from './AuthProvider';
 import "./logout.css";
 
-export default function Logout() {
+const Logout = () => {
+  const { logout } = useAuth();
+
+  useEffect(() => {
+    logout();
+  }, [logout]);
+
   return (
-    <div class="header-content">
+    <div className="header-content">
       <h2>
         We're sorry you're leaving. For your next travel destination, we hope
         to see you again soon!
@@ -14,4 +21,6 @@ export default function Logout() {
       </div>
     </div>
   );
-}
+};
+
+export default Logout;
