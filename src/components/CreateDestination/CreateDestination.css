@@ -1,0 +1,131 @@
+/* CreateDestination.css */
+.Create {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .form {
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgb(163, 215, 215);
+    border-radius: 15px;
+  }
+  
+  .form h2 {
+    color: lightslategray;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 1em;
+  }
+  
+  .form-group label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 19px;
+    color: rgb(106, 165, 224);
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  
+  .form-group input {
+    width: calc(100% - 1em);
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 13px;
+  }
+  
+  button.btn {
+    width: 100%;
+    padding: 0.75em;
+    background: lightslategray;
+    color: white;
+    border: none;
+    border-radius: 13px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  button.btn:hover {
+    background: rgb(3, 59, 77);
+    font-size: 18px;
+  }
+  
+  .travel-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .travel-item {
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 10px;
+    background: #f9f9f9;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .travel-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .travel-info {
+    margin-top: 10px;
+  }
+  
+  .travel-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .travel-info p {
+    font-size: 16px;
+  }
+  
+  .take-offer {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  
+  .take-offer:hover {
+    background-color: white;
+    color: black;
+    font-size: 18px;
+  }
+  
+  .destination-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .destination-buttons button {
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .destination-buttons button:hover {
+    background: #0056b3;
+  }
+  

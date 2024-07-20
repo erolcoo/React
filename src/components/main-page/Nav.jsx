@@ -2,8 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPlus, faSignInAlt, faSignOutAlt, faList } from "@fortawesome/free-solid-svg-icons";
-import { useAuth } from '../auth-pages/AuthProvider'; // Импортиране на useAuth
+import { useAuth } from '../auth-pages/AuthProvider'; 
 import "./Navbar.css";
+import { faPenFancy } from '@fortawesome/free-solid-svg-icons/faPenFancy';
+
 
 export default function NavBar() {
   const { isAuthenticated } = useAuth(); 
@@ -40,6 +42,12 @@ export default function NavBar() {
             <Link to="/Catalog">
               <FontAwesomeIcon icon={faList} style={{ color: "yellow" }} />
               Catalog
+            </Link>
+          </li>
+          <li>
+            <Link to="/CreateDestination">
+              <FontAwesomeIcon icon={faPenFancy} style={{ color: "blue" }} />
+             Create
             </Link>
           </li>
         </ul>

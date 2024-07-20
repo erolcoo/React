@@ -13,6 +13,7 @@ import RegisterForm from "./components/auth-pages/register.jsx";
 import TakeOffer from "./components/views/TakeOffer.jsx";
 import Logout from "./components/auth-pages/Logout.jsx";
 import { AuthProvider } from "./components/auth-pages/AuthProvider";
+import CreateDestination from "./components/CreateDestination/Createdestination.jsx";
 
 function Layout() {
   const location = useLocation();
@@ -28,6 +29,7 @@ function Layout() {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/Catalog" element={<Catalog />} />
+        <Route path="/CreateDestination" element={<CreateDestination />} />
         <Route path="/Europa" element={<Europa />} />
         <Route path="/USA" element={<USA />} />
         <Route path="/Arabia" element={<Arabia />} />
