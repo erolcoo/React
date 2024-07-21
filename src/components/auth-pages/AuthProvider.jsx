@@ -18,24 +18,28 @@ export const AuthProvider = ({ children }) => {
     restoreUser();
   }, []);
 
-  const login = (user) => {
-    setUser(user);
-    setIsAuthenticated(true);
-    localStorage.setItem('user', JSON.stringify(user));
+  const login = (email, password) => {
+    const storedUser = JSON.parse(localStorage.getItem('userPersisted'));
+    
+    if (storedUser && storedUser.email === email && storedUser.password === password) {
+      setUser(storedUser);
+      setIsAuthenticated(true);
+    } else {
+      console.log('Invalid credentials');
+    }
   };
 
   const logout = () => {
     setIsAuthenticated(false);
-    setUser(null);
-    localStorage.removeItem('user');
-    localStorage.setItem('userPersisted', JSON.stringify(user));
+    // setUser(null);
+    // localStorage.removeItem('userPersisted');
   };
 
   const register = (user) => {
-    const existingUser = JSON.parse(localStorage.getItem('user'));
+    const existingUser = JSON.parse(localStorage.getItem('userPersisted'));
 
     if (!existingUser) {
-      localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem('userPersisted', JSON.stringify(user));
       setUser(user);
       setIsAuthenticated(true);
     } else {

@@ -9,7 +9,6 @@ import USA from "./components/views/USA.jsx";
 import Arabia from "./components/views/Arabia.jsx";
 import LoginForm from "./components/auth-pages/login.jsx";
 import RegisterForm from "./components/auth-pages/register.jsx";
-import TakeOffer from "./components/views/TakeOffer.jsx";
 import Logout from "./components/auth-pages/Logout.jsx";
 import { AuthProvider } from "./components/auth-pages/AuthProvider";
 import CreateDestination from "./components/CreateDestination/Createdestination.jsx";
@@ -34,7 +33,6 @@ function Layout() {
         <Route path="/Europa" element={<Europa />} />
         <Route path="/USA" element={<USA />} />
         <Route path="/Arabia" element={<Arabia />} />
-        <Route path="/TakeOffer" element={<TakeOffer />} />
         <Route path="/DeleteAccount" element={<DeleteAccount />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

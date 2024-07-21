@@ -35,7 +35,6 @@ const USA = () => {
                         <div>
                             <h3>{destination.title}</h3>
                             <p>{destination.description}</p>
-                            <p><br /><a href="/TakeOffer">Take Offer</a></p>
                         </div>
                     </div>
                 ))}

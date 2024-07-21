@@ -6,10 +6,11 @@ import {
   faSignInAlt,
   faSignOutAlt,
   faList,
+  faTrash,
+  faPlusCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { useAuth } from '../auth-pages/AuthProvider';
 import './Navbar.css';
-import { faPenFancy } from '@fortawesome/free-solid-svg-icons/faPenFancy';
 
 export default function NavBar() {
   const { isAuthenticated } = useAuth();
@@ -36,20 +37,19 @@ export default function NavBar() {
           <>
             <li>
               <Link to="/DeleteAccount">
-                <FontAwesomeIcon icon={faSignOutAlt} style={{ color: 'red' }} />
+                <FontAwesomeIcon icon={faTrash} style={{ color: 'red' }} />
                 Delete Account
               </Link>
             </li>
             <li>
               <Link to="/logout">
-                <FontAwesomeIcon icon={faSignOutAlt} style={{ color: 'red' }} />
+                <FontAwesomeIcon icon={faSignOutAlt} style={{ color: 'orange' }} />
                 Logout
               </Link>
             </li>
-            {/* Show 'CreateDestination' link only if authenticated */}
             <li>
               <Link to="/CreateDestination">
-                <FontAwesomeIcon icon={faPenFancy} style={{ color: 'blue' }} />
+                <FontAwesomeIcon icon={faPlusCircle} style={{ color: 'blue' }} />
                 Create
               </Link>
             </li>

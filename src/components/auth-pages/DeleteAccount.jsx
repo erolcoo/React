@@ -1,4 +1,4 @@
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../auth-pages/AuthProvider';
 
 export default function DeleteAccount() {
@@ -6,15 +6,15 @@ export default function DeleteAccount() {
   const navigate = useNavigate(); 
 
   const handleDelete = () => {
- 
+    
     localStorage.removeItem('user');
     localStorage.removeItem('userPersisted');
 
-    navigate('/'); 
+  
     setIsAuthenticated(false);
+    navigate('/');
     setUser(null);
 
- 
   };
 
   return (

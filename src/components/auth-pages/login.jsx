@@ -12,16 +12,12 @@ const LoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Retrieve stored user from localStorage
-    const storedUser = JSON.parse(localStorage.getItem('user'));
-
-    // Check if storedUser exists and matches input email/password
-    if (storedUser && storedUser.email === email && storedUser.password === password) {
-      login(storedUser); 
-      navigate('/'); 
-    } else {
+    // Извикване на login функцията от AuthProvider
+    login(email, password);
+    if (errors.general) {
       setErrors({ general: 'Invalid email or password.' });
+    } else {
+      navigate('/');
     }
   };
 
