@@ -1,5 +1,5 @@
 # React + Vite
-# Trip Organization Platform
+# Trip Organization App
 
 This is a web application for excursions where any user can choose from the catalog of excursions. However, to get an offer, they must have an account. Users with an account can create their own travel destinations, as well as edit and delete them. Firebase is used for the backend, and the application is developed with React and Vite.
 
