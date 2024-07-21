@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { useAuth } from './AuthProvider';
 import './auth.css';
 
 const RegisterForm = () => {
@@ -7,6 +8,7 @@ const RegisterForm = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errors, setErrors] = useState({});
+  const { register } = useAuth();
   const navigate = useNavigate();
 
   const validateEmail = (email) => email.includes('@');
@@ -28,9 +30,7 @@ const RegisterForm = () => {
       return;
     }
 
-    const newUser = { email, password };
-    localStorage.setItem('user', JSON.stringify(newUser));
-
+    register({ email, password });
     setEmail('');
     setPassword('');
     setConfirmPassword('');

@@ -18,8 +18,8 @@ const LoginForm = () => {
 
     // Check if storedUser exists and matches input email/password
     if (storedUser && storedUser.email === email && storedUser.password === password) {
-      login(storedUser); // Perform login action
-      navigate('/'); // Redirect to home page after successful login
+      login(storedUser); 
+      navigate('/'); 
     } else {
       setErrors({ general: 'Invalid email or password.' });
     }

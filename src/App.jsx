@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/main-page/Header.jsx";
 import NavBar from "./components/main-page/Nav.jsx";
@@ -14,6 +13,8 @@ import TakeOffer from "./components/views/TakeOffer.jsx";
 import Logout from "./components/auth-pages/Logout.jsx";
 import { AuthProvider } from "./components/auth-pages/AuthProvider";
 import CreateDestination from "./components/CreateDestination/Createdestination.jsx";
+import DeleteAccount from "./components/auth-pages/DeleteAccount.jsx";
+import NotFound from "./components/views/NotFound.jsx";
 
 function Layout() {
   const location = useLocation();
@@ -34,6 +35,8 @@ function Layout() {
         <Route path="/USA" element={<USA />} />
         <Route path="/Arabia" element={<Arabia />} />
         <Route path="/TakeOffer" element={<TakeOffer />} />
+        <Route path="/DeleteAccount" element={<DeleteAccount />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       {isHomePage && <Footer />}
     </>

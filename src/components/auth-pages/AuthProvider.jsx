@@ -7,32 +7,44 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem('user'));
-    if (storedUser) {
-      setUser(storedUser);
-      setIsAuthenticated(true);
-    }
+    const restoreUser = () => {
+      const persistedUser = localStorage.getItem('userPersisted');
+      if (persistedUser) {
+        setUser(JSON.parse(persistedUser));
+        setIsAuthenticated(true);
+      }
+    };
+
+    restoreUser();
   }, []);
 
-  const login = ({ email, password }) => {
-    const storedUser = JSON.parse(localStorage.getItem('user'));
-
-    if (storedUser && storedUser.email === email && storedUser.password === password) {
-      setUser(storedUser);
-      setIsAuthenticated(true);
-    } else {
-      console.log('Invalid email or password.');
-    }
+  const login = (user) => {
+    setUser(user);
+    setIsAuthenticated(true);
+    localStorage.setItem('user', JSON.stringify(user));
   };
 
   const logout = () => {
     setIsAuthenticated(false);
     setUser(null);
     localStorage.removeItem('user');
+    localStorage.setItem('userPersisted', JSON.stringify(user));
+  };
+
+  const register = (user) => {
+    const existingUser = JSON.parse(localStorage.getItem('user'));
+
+    if (!existingUser) {
+      localStorage.setItem('user', JSON.stringify(user));
+      setUser(user);
+      setIsAuthenticated(true);
+    } else {
+      console.log('User already exists.');
+    }
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, user, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, user, login, logout, register }}>
       {children}
     </AuthContext.Provider>
   );
