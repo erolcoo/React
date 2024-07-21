@@ -2,10 +2,7 @@ import { Link } from 'react-router-dom';
 import './CreateDestination.css';
 
 const EditDestinationForm = ({ editData, handleEditChange, handleUpdate, handleCancel }) => (
-   <> <h2>Edit Destination</h2>
-    <div className="Link-Home">
-                <Link to="/catalog">Back</Link>
-            </div>
+   <> <h5>Edit Destination</h5>
    <div className="form">
      <form onSubmit={handleUpdate}>
        <div className="form-group">

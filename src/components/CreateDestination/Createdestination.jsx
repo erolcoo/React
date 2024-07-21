@@ -150,7 +150,7 @@ const CreateDestination = () => {
         />
       )}
 
-      <h2>Your destinations</h2>
+      <h5>Your destinations</h5>
       <div className="travel-box">
         {destinations.map((dest) => (
           <DestinationItem
