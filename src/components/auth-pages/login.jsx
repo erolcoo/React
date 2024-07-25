@@ -12,7 +12,6 @@ const LoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Извикване на login функцията от AuthProvider
     login(email, password);
     if (errors.general) {
       setErrors({ general: 'Invalid email or password.' });

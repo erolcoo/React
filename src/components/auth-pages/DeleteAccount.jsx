@@ -12,9 +12,9 @@ export default function DeleteAccount() {
 
   
     setIsAuthenticated(false);
-    navigate('/');
     setUser(null);
-
+    navigate('/');
+   
   };
 
   return (
