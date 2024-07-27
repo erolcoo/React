@@ -48,7 +48,7 @@ export default function NavBar() {
               <Link to="/logout">
                 <FontAwesomeIcon
                   icon={faSignOutAlt}
-                  style={{ color: "orange" }}
+                  style={{ color: "red" }}
                 />
                 Logout
               </Link>
