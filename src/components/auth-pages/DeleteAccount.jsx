@@ -2,19 +2,12 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../auth-pages/AuthProvider';
 
 export default function DeleteAccount() {
-  const { setIsAuthenticated, setUser } = useAuth(); 
-  const navigate = useNavigate(); 
+  const { deleteAccount } = useAuth();
+  const navigate = useNavigate();
 
   const handleDelete = () => {
-    
-    localStorage.removeItem('user');
-    localStorage.removeItem('userPersisted');
-
-  
-    setIsAuthenticated(false);
-    setUser(null);
-    navigate('/');
-   
+    deleteAccount(); 
+    navigate('/');  
   };
 
   return (

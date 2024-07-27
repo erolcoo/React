@@ -49,9 +49,9 @@ async function fetchDestination() {
     const europeData = await fetchEuropeDestination();
     const usaData = await fetchUSADestination();
 
-    console.log('Arabia Data:', arabiaData);
-    console.log('Europe Data:', europeData);
-    console.log('USA Data:', usaData);
+    // console.log('Arabia Data:', arabiaData);
+    // console.log('Europe Data:', europeData);
+    // console.log('USA Data:', usaData);
 }
 
 

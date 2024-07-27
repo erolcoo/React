@@ -47,8 +47,19 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const updateUser = (updatedUser) => {
+    localStorage.setItem('userPersisted', JSON.stringify(updatedUser));
+    setUser(updatedUser);
+  };
+
+  const deleteAccount = () => {
+    setIsAuthenticated(false);
+    setUser(null);
+    localStorage.removeItem('userPersisted');
+  };
+
   return (
-    <AuthContext.Provider value={{ isAuthenticated, user, login, logout, register }}>
+    <AuthContext.Provider value={{ isAuthenticated, user, login, logout, register, updateUser, deleteAccount }}>
       {children}
     </AuthContext.Provider>
   );

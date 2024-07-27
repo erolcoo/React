@@ -6,7 +6,7 @@ const EditDestinationForm = ({ editData, handleEditChange, handleUpdate, handleC
    <div className="form">
      <form onSubmit={handleUpdate}>
        <div className="form-group">
-         <label>Image URL:</label>
+         <label>Photo to your dream place:</label>
          <input
            type="text"
            name="image"
@@ -16,7 +16,7 @@ const EditDestinationForm = ({ editData, handleEditChange, handleUpdate, handleC
          />
        </div>
        <div className="form-group">
-         <label>Destination Name:</label>
+         <label>Mount:</label>
          <input
            type="text"
            name="name"
@@ -26,7 +26,7 @@ const EditDestinationForm = ({ editData, handleEditChange, handleUpdate, handleC
          />
        </div>
        <div className="form-group">
-         <label>Days:</label>
+         <label>Days to stay:</label>
          <input
            type="number"
            name="days"

@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setDestinations, addDestination, updateDestination as updateDestinationAction, deleteDestination as deleteDestinationAction } from '../destinationsSlice';
 import DestinationItem from './DestinationItem';
 import CreateDestinationForm from './CreateDestinationForm';
 import EditDestinationForm from './EditDestinationForm';
+import { fetchDestinations, addDestination as addDestinationAPI, deleteDestination as deleteDestinationAPI, updateDestination as updateDestinationAPI } from '../../services/destinationAPI'; 
+
 import './CreateDestination.css';
 
-const API_URL =
-  "https://react-e347e-default-rtdb.europe-west1.firebasedatabase.app/destinations.json";
-
 const CreateDestination = () => {
-  const [destinations, setDestinations] = useState([]);
+  const dispatch = useDispatch();
+  const destinations = useSelector((state) => state.destinations);
+
   const [formData, setFormData] = useState({
     id: "",
     image: "",
@@ -19,21 +22,17 @@ const CreateDestination = () => {
   const [editData, setEditData] = useState({ image: "", name: "", days: "" });
 
   useEffect(() => {
-    const fetchDestinations = async () => {
+    const fetchDestinationsData = async () => {
       try {
-        const response = await fetch(API_URL);
-        const data = await response.json();
-        const destinationsArray = data
-          ? Object.entries(data).map(([id, dest]) => ({ id, ...dest }))
-          : [];
-        setDestinations(destinationsArray);
+        const destinationsArray = await fetchDestinations();
+        dispatch(setDestinations(destinationsArray));
       } catch (error) {
         console.error("Error fetching destinations:", error);
       }
     };
 
-    fetchDestinations();
-  }, []);
+    fetchDestinationsData();
+  }, [dispatch]);
 
   const handleChange = (e) => {
     setFormData({
@@ -45,27 +44,8 @@ const CreateDestination = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(
-        `${API_URL.replace(".json", "")}/${formData.id}.json`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            image: formData.image,
-            name: formData.name,
-            days: formData.days,
-          }),
-        }
-      );
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      setDestinations((prevDestinations) => [
-        ...prevDestinations,
-        { id: formData.id, ...formData },
-      ]);
+      const newDestination = await addDestinationAPI(formData);
+      dispatch(addDestination({ id: formData.id, ...formData }));
       setFormData({ id: "", image: "", name: "", days: "" });
     } catch (error) {
       console.error("Error adding destination:", error);
@@ -74,14 +54,8 @@ const CreateDestination = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(
-        `${API_URL.replace(".json", "")}/${id}.json`,
-        { method: "DELETE" }
-      );
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      setDestinations(destinations.filter((dest) => dest.id !== id));
+      await deleteDestinationAPI(id);
+      dispatch(deleteDestinationAction(id));
     } catch (error) {
       console.error("Error deleting destination:", error);
     }
@@ -100,18 +74,8 @@ const CreateDestination = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      await fetch(`${API_URL.replace(".json", "")}/${editingId}.json`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(editData),
-      });
-      setDestinations(
-        destinations.map((dest) =>
-          dest.id === editingId ? { ...dest, ...editData } : dest
-        )
-      );
+      await updateDestinationAPI(editingId, editData);
+      dispatch(updateDestinationAction({ id: editingId, ...editData }));
       setEditingId(null);
       setEditData({ image: "", name: "", days: "" });
     } catch (error) {

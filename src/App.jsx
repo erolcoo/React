@@ -1,19 +1,22 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import Header from "./components/main-page/Header.jsx";
-import NavBar from "./components/main-page/Nav.jsx";
-import Catalog from "./components/main-page/Catalog.jsx";
-import Core from "./components/main-page/Core.jsx";
-import Footer from "./components/main-page/Footer.jsx";
-import Europa from "./components/views/Europa.jsx";
-import USA from "./components/views/USA.jsx";
-import Arabia from "./components/views/Arabia.jsx";
-import LoginForm from "./components/auth-pages/Login.jsx";
-import RegisterForm from "./components/auth-pages/Register.jsx";
-import Logout from "./components/auth-pages/Logout.jsx";
-import { AuthProvider } from "./components/auth-pages/AuthProvider";
-import CreateDestination from "./components/CreateDestination/Createdestination.jsx";
-import DeleteAccount from "./components/auth-pages/DeleteAccount.jsx";
-import NotFound from "./components/views/NotFound.jsx";
+import React from 'react';
+import { Provider } from 'react-redux';
+import store from '././components/store'; 
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Header from './components/main-page/Header.jsx';
+import NavBar from './components/main-page/Nav.jsx';
+import Catalog from './components/main-page/Catalog.jsx';
+import Core from './components/main-page/Core.jsx';
+import Footer from './components/main-page/Footer.jsx';
+import Europa from './components/views/Europa.jsx';
+import USA from './components/views/USA.jsx';
+import Arabia from './components/views/Arabia.jsx';
+import LoginForm from './components/auth-pages/Login.jsx';
+import RegisterForm from './components/auth-pages/Register.jsx';
+import Logout from './components/auth-pages/Logout.jsx';
+import { AuthProvider } from './components/auth-pages/AuthProvider';
+import CreateDestination from './components/CreateDestination/Createdestination.jsx';
+import MyProfile from './components/MyProfile/MyProfile.jsx';
+import NotFound from './components/views/NotFound.jsx';
 
 function Layout() {
   const location = useLocation();
@@ -33,7 +36,7 @@ function Layout() {
         <Route path="/Europa" element={<Europa />} />
         <Route path="/USA" element={<USA />} />
         <Route path="/Arabia" element={<Arabia />} />
-        <Route path="/DeleteAccount" element={<DeleteAccount />} />
+        <Route path="/MyProfile" element={<MyProfile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       {isHomePage && <Footer />}
@@ -43,11 +46,13 @@ function Layout() {
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <Layout />
-      </Router>
-    </AuthProvider>
+    <Provider store={store}>
+      <AuthProvider>
+        <Router>
+          <Layout />
+        </Router>
+      </AuthProvider>
+    </Provider>
   );
 }
 

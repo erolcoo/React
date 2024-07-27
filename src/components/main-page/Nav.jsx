@@ -1,16 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUserPlus,
   faSignInAlt,
   faSignOutAlt,
   faList,
-  faTrash,
   faPlusCircle,
-} from '@fortawesome/free-solid-svg-icons';
-import { useAuth } from '../auth-pages/AuthProvider';
-import './Navbar.css';
+  faUserAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import { useAuth } from "../auth-pages/AuthProvider";
+import "./Navbar.css";
 
 export default function NavBar() {
   const { isAuthenticated } = useAuth();
@@ -22,13 +22,16 @@ export default function NavBar() {
           <>
             <li>
               <Link to="/register">
-                <FontAwesomeIcon icon={faUserPlus} style={{ color: 'green' }} />
+                <FontAwesomeIcon icon={faUserPlus} style={{ color: "green" }} />
                 Register
               </Link>
             </li>
             <li>
               <Link to="/login">
-                <FontAwesomeIcon icon={faSignInAlt} style={{ color: 'green' }} />
+                <FontAwesomeIcon
+                  icon={faSignInAlt}
+                  style={{ color: "green" }}
+                />
                 Login
               </Link>
             </li>
@@ -36,20 +39,26 @@ export default function NavBar() {
         ) : (
           <>
             <li>
-              <Link to="/DeleteAccount">
-                <FontAwesomeIcon icon={faTrash} style={{ color: 'red' }} />
-                Delete Account
+              <Link to="/MyProfile">
+                <FontAwesomeIcon icon={faUserAlt} style={{ color: "gray" }} />
+                MyAccount
               </Link>
             </li>
             <li>
               <Link to="/logout">
-                <FontAwesomeIcon icon={faSignOutAlt} style={{ color: 'orange' }} />
+                <FontAwesomeIcon
+                  icon={faSignOutAlt}
+                  style={{ color: "orange" }}
+                />
                 Logout
               </Link>
             </li>
             <li>
               <Link to="/CreateDestination">
-                <FontAwesomeIcon icon={faPlusCircle} style={{ color: 'blue' }} />
+                <FontAwesomeIcon
+                  icon={faPlusCircle}
+                  style={{ color: "blue" }}
+                />
                 Create
               </Link>
             </li>
@@ -57,7 +66,7 @@ export default function NavBar() {
         )}
         <li>
           <Link to="/Catalog">
-            <FontAwesomeIcon icon={faList} style={{ color: 'yellow' }} />
+            <FontAwesomeIcon icon={faList} style={{ color: "yellow" }} />
             Catalog
           </Link>
         </li>
