@@ -12,13 +12,8 @@ export default function DeleteAccount() {
 
   return (
     <div className="delete-account">
-      <h1>Delete Account</h1>
-      <p>Are you sure you want to delete your account? This action cannot be undone.</p>
       <button onClick={handleDelete} style={{ background: 'red', color: 'white' }}>
         Delete Account
-      </button>
-      <button onClick={() => navigate('/')} style={{ marginLeft: '10px' }}>
-        Cancel
       </button>
     </div>
   );

@@ -1,4 +1,3 @@
-import React from "react";
 import "./CreateDestination.css";
 
 const DestinationItem = ({ destination, onEdit, onDelete }) => {

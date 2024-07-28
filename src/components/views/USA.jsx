@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { fetchUSADestination } from '../../services/FetchDestinations.js';
 import { Link } from 'react-router-dom';
 import './main.css';
