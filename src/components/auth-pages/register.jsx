@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from './AuthProvider';
-
 import './auth.css';
 
 const RegisterForm = () => {
@@ -9,6 +10,7 @@ const RegisterForm = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errors, setErrors] = useState({});
+  const [showPassword, setShowPassword] = useState(false);
   const { register } = useAuth();
   const navigate = useNavigate();
 
@@ -56,24 +58,38 @@ const RegisterForm = () => {
       </div>
       <div className="form-group">
         <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+        <div className="password-container">
+          <input
+            type={showPassword ? 'text' : 'password'}
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <FontAwesomeIcon 
+            icon={showPassword ? faEye : faEyeSlash} 
+            onClick={() => setShowPassword(!showPassword)}
+            style={{ cursor: 'pointer', marginLeft: '10px' }}
+          />
+        </div>
         {errors.password && <p className="error">{errors.password}</p>}
       </div>
       <div className="form-group">
         <label htmlFor="confirmPassword">Confirm Password:</label>
-        <input
-          type="password"
-          id="confirmPassword"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required
-        />
+        <div className="password-container">
+          <input
+            type={showPassword ? 'text' : 'password'}
+            id="confirmPassword"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+          <FontAwesomeIcon 
+            icon={showPassword ? faEye : faEyeSlash} 
+            onClick={() => setShowPassword(!showPassword)}
+            style={{ cursor: 'pointer', marginLeft: '10px' }}
+          />
+        </div>
         {errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
       </div>
       <button type="submit">Submit</button>

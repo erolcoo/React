@@ -50,7 +50,7 @@ const CreateDestinationForm = ({ formData, handleChange, handleSubmit }) => (
           <button type="submit" className="btn">
             Add
           </button>
-          <Link to="/catalog" className="btn">
+          <Link to="/" className="btn">
             Back
           </Link>
         </div>

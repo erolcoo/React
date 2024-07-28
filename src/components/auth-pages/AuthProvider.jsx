@@ -20,12 +20,13 @@ export const AuthProvider = ({ children }) => {
 
   const login = (email, password) => {
     const storedUser = JSON.parse(localStorage.getItem('userPersisted'));
-    
+
     if (storedUser && storedUser.email === email && storedUser.password === password) {
       setUser(storedUser);
       setIsAuthenticated(true);
+      return Promise.resolve();
     } else {
-      console.log('Invalid credentials');
+      return Promise.reject(new Error('Invalid credentials'));
     }
   };
 
@@ -35,15 +36,16 @@ export const AuthProvider = ({ children }) => {
     // localStorage.removeItem('userPersisted');
   };
 
-  const register = (user) => {
+  const register = (newUser) => {
     const existingUser = JSON.parse(localStorage.getItem('userPersisted'));
 
     if (!existingUser) {
-      localStorage.setItem('userPersisted', JSON.stringify(user));
-      setUser(user);
+      localStorage.setItem('userPersisted', JSON.stringify(newUser));
+      setUser(newUser);
       setIsAuthenticated(true);
+      return Promise.resolve();
     } else {
-      console.log('User already exists.');
+      return Promise.reject(new Error('User already exists.'));
     }
   };
 

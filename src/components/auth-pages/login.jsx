@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from './AuthProvider';
 import './auth.css';
@@ -6,17 +8,20 @@ import './auth.css';
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    login(email, password);
-    if (errors.general) {
-      setErrors({ general: 'Invalid email or password.' });
-    } else {
+    setErrors({});
+
+    try {
+      await login(email, password);
       navigate('/');
+    } catch (err) {
+      setErrors({ general: 'Invalid email or password.' });
     }
   };
 
@@ -35,13 +40,20 @@ const LoginForm = () => {
       </div>
       <div className="form-group">
         <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+        <div className="password-container">
+          <input
+            type={showPassword ? 'text' : 'password'}
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <FontAwesomeIcon 
+            icon={showPassword ? faEye : faEyeSlash} 
+            onClick={() => setShowPassword(!showPassword)}
+            style={{ cursor: 'pointer' }}
+          />
+        </div>
       </div>
       {errors.general && <p className="error">{errors.general}</p>}
       <button type="submit">Submit</button>
